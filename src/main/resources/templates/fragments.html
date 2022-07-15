@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-  
+	<!-- Head resources -->
   	<th:block th:fragment="src-head">
   		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,15 @@
   	
   </head>
   <body>
+	<!-- navbar -->
+	<nav th:fragment="navbar(current)" class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="/">
+				<img class="w-25" src="/img/java_ico.png" alt="UniJAVA">
+			</a>
+			<a class="nav-link text-info" href="/dipartimenti">Dipartimenti</a>
+		</div>
+	</nav>
   </body>
 </html>
 

@@ -18,6 +18,12 @@ public class MainController
 	@Autowired
 	private DepartmentRepository repo;
 	
+	@GetMapping("/")
+	public String home() 
+	{
+		return "home";
+	}
+	
 	@GetMapping("/dipartimenti")
 	public String departments(Model model)
 	{
