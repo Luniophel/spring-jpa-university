@@ -27,8 +27,8 @@ public class MainController
 	@GetMapping("/dipartimenti")
 	public String departments(Model model)
 	{
-		List<Department> DepartmentsList =(List<Department>)repo.findAllByOrderByName();
-		model.addAttribute("DepartmentsList" ,DepartmentsList);
+		List<Department> DepartmentsList =(List<Department>)repo.findAll();
+		model.addAttribute("DepartmentsList" , DepartmentsList);
 		return "departments";
 	}
 

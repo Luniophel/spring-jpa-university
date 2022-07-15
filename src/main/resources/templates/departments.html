@@ -8,12 +8,32 @@
   <body>
       <nav th:replace="fragments :: navbar('dipartimenti')"></nav>
 
-	  <div class="container">
-	    <h1>Ecco i nostri Dipartimenti:</h1>
-	    <div class="container px-6">
-	    	<ul class="list-group">
-	       		<li class="list-group-item " th:each="department : ${DepartmentsList} " th:text="${department.getName()}"></li>
-	    	</ul>
+	  <div th:if="${#lists.isEmpty(DepartmentsList)}">
+	  	<h1>Lista non disponibile, riprovare più tardi</h1>
 	  </div>
+	  <div th:unless="${#lists.isEmpty(DepartmentsList)}">
+	        <table class="table my-3">
+	          <thead>
+	            <tr>
+	              <th>Nome</th>
+	              <th>Indirizzo</th>
+	              <th>Telefono</th>
+	              <th>Indirizzo mail</th>
+	              <th>Sito web</th>
+	              <th>Capodipartimento</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr class="align-middle" th:each="d : ${DepartmentsList}">
+	              <td class="bg-success text-light" th:text="${d.name}"></td>
+	              <td th:text="${d.address}"></td>
+	              <td th:text="${d.phone}"></td>
+	              <td th:text="${d.email}"></td>
+	              <td th:text="${d.website}"></td>
+	              <td th:text="${d.headOfDepartment}"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	   </div>
   </body>
 </html>
