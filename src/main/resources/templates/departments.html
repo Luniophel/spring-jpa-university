@@ -2,12 +2,12 @@
 <html lang="it">
   <head>
     <th:block th:replace="fragments :: src-head"></th:block>
-	<title>Sito Università</title>
+	<title>Dipartimenti</title>
   </head>
   
   <body>
   <div class="container">
-    <h1>List of University Departments</h1>
+    <h1>Ecco i nostri Dipartimenti:</h1>
     <div class="container px-6">
     	<ul class="list-group">
        		<li class="list-group-item " th:each="department : ${DepartmentsList} " th:text="${department.getName()}"></li>

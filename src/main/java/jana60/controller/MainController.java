@@ -19,11 +19,11 @@ public class MainController
 	private DepartmentRepository repo;
 	
 	@GetMapping("/dipartimenti")
-	public String home(Model model)
+	public String departments(Model model)
 	{
 		List<Department> DepartmentsList =(List<Department>)repo.findAllByOrderByName();
 		model.addAttribute("DepartmentsList" ,DepartmentsList);
-		return "home";
+		return "departments";
 	}
 
 }
