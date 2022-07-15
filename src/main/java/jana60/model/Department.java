@@ -8,8 +8,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="departments")
-public class University 
+public class Department 
 {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -83,6 +84,5 @@ public class University
 	public void setHeadOfDepartment(String headOfDepartment) {
 		this.headOfDepartment = headOfDepartment;
 	}
-	
 	
 }

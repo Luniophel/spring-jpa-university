@@ -7,21 +7,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import jana60.model.University;
-import jana60.repository.UniversityRepository;
+import jana60.model.Department;
+import jana60.repository.DepartmentRepository;
 
 @Controller
 @RequestMapping("/")
-public class UniversityController 
+public class MainController 
 {
 	
 	@Autowired
-	private UniversityRepository repo;
+	private DepartmentRepository repo;
 	
-	@GetMapping
+	@GetMapping("/dipartimenti")
 	public String home(Model model)
 	{
-		List<University> DepartmentsList =(List<University>)repo.findAll();
+		List<Department> DepartmentsList =(List<Department>)repo.findAllByOrderByName();
 		model.addAttribute("DepartmentsList" ,DepartmentsList);
 		return "home";
 	}
