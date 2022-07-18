@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
+
   <head>
     <th:block th:replace="fragments :: src-head"></th:block>
 	<title>Dipartimenti</title>
   </head>
   
   <body>
-    <th:block th:replace="fragments :: navbar(current)"></th:block>
+    <th:block th:replace="fragments :: navbar(dipartimenti)"></th:block>
 
 	  <div th:if="${#lists.isEmpty(DepartmentsList)}">
 	  	<h1>Lista non disponibile, riprovare più tardi</h1>

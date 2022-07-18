@@ -9,7 +9,7 @@ import jana60.model.Degree;
 import jana60.model.Department;
 
 @Repository
-public interface DegreeRepository extends CrudRepository <Department, Integer> 
+public interface DegreeRepository extends CrudRepository <Degree, Integer> 
 {
 
 	List<Degree> findAllByOrderByName();

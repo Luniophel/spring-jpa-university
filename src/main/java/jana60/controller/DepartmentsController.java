@@ -19,10 +19,11 @@ public class DepartmentsController
 	private DepartmentRepository repo;
 	
 	@GetMapping
-	public String departments(Model model)
+	public String departmentsList(Model model)
 	{
 		//List<Department> DepartmentsList =(List<Department>)repo.findAll();
 		//model.addAttribute("DepartmentsList" , DepartmentsList);
+		
 		model.addAttribute("DepartmentsList" , repo.findAll());
 		return "departments";
 	}

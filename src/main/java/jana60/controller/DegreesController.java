@@ -19,7 +19,7 @@ public class DegreesController
 	private DegreeRepository repo;
 	
 	@GetMapping
-	public String degreesList(Model model) 
+	public String degrees(Model model) 
 	{
 		model.addAttribute("DegreesList" , repo.findAll());		
 		return "degrees";

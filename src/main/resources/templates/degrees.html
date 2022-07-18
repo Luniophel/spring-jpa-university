@@ -3,35 +3,35 @@
 
 <head>
     <th:block th:replace="fragments :: src-head"></th:block>
-    <title>JAVA University</title>
+    <title>Corsi di Laurea</title>
 </head>
 
 <body>
-    <th:block th:replace="fragments :: navbar(current)"></th:block>
+    <th:block th:replace="fragments :: navbar(corsi)"></th:block>
     
-    	  <div th:if="${#lists.isEmpty(DepartmentsList)}">
+      <div th:if="${#lists.isEmpty(DegreesList)}">
 	  	<h1>Lista non disponibile, riprovare più tardi</h1>
 	  </div>
-	  <div th:unless="${#lists.isEmpty(DepartmentsList)}">
+	  <div th:unless="${#lists.isEmpty(DegreesList)}">
 	        <table class="table my-3">
 	          <thead>
 	            <tr>
 	              <th>Nome</th>
+	              <th>Tipologia</th>
 	              <th>Indirizzo</th>
-	              <th>Telefono</th>
-	              <th>Indirizzo mail</th>
-	              <th>Sito web</th>
-	              <th>Capodipartimento</th>
+	              <th>Dipartimento</th>
+	              <th>E-Mail</th>
+	              <th>Sito Web</th>
 	            </tr>
 	          </thead>
 	          <tbody>
-	            <tr class="align-middle" th:each="d : ${DepartmentsList}">
+	            <tr class="align-middle" th:each="d : ${DegreesList}">
 	              <td class="bg-success text-light" th:text="${d.name}"></td>
+	              <td class="bg-secondary text-light" th:text="${d.level}"></td>
 	              <td th:text="${d.address}"></td>
-	              <td th:text="${d.phone}"></td>
+	              <td th:text="${d.getDepartments.name}"></td>
 	              <td th:text="${d.email}"></td>
 	              <td th:text="${d.website}"></td>
-	              <td th:text="${d.headOfDepartment}"></td>
 	            </tr>
 	          </tbody>
 	        </table>
