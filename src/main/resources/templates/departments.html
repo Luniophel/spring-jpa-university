@@ -26,7 +26,9 @@
 	          </thead>
 	          <tbody>
 	            <tr class="align-middle" th:each="d : ${DepartmentsList}">
-	              <td class="bg-success text-light" th:text="${d.name}"></td>
+	              <td class="bg-light text-light">
+	              		<a th:href="@{|/dipartimenti/${d.id}|}" th:text="${d.name}"></a>
+	              </td>
 	              <td th:text="${d.address}"></td>
 	              <td th:text="${d.phone}"></td>
 	              <td th:text="${d.email}"></td>

@@ -29,7 +29,9 @@
 	              <td class="bg-success text-light" th:text="${d.name}"></td>
 	              <td class="bg-secondary text-light" th:text="${d.level}"></td>
 	              <td th:text="${d.address}"></td>
-	              <td th:text="${d.getDepartments.name}"></td>
+	              <td>
+	              		<a th:href="@{|/dipartimenti/${d.getDepartments.id}|}" th:text="${d.getDepartments.name}"></a>
+	              </td>
 	              <td th:text="${d.email}"></td>
 	              <td th:text="${d.website}"></td>
 	            </tr>
