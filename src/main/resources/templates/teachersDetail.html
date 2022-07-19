@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <th:block th:replace="fragments :: src-head"></th:block>
+    <title th:text="${teacher.name}"></title>
+</head>
+
+<body>
+	<th:block th:replace="fragments :: navbar(insegnanti)"></th:block>
+
+	<div class="container">
+		<h1 th:text="${teacher.getFullName()}"></h1>
+	</div>
+	<div class="container">
+			<table class="table my-3">
+	          <thead>
+	            <tr class="text-center">
+	              <th>Telefono</th>
+	              <th>E-Mail</th>
+	              <th>Indirizzo Ufficio - Num.</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr class="align-middle">
+	              <td class="bg-secondary text-light text-center" th:text="${teacher.phone}"></td>
+	              <td class="text-center" th:text="${teacher.email}"></td>
+	              <td class="text-center" th:text="${teacher.officeAddress} + ' - Stanza ' + ${teacher.officeNumber}"></td>
+	            </tr>
+	          </tbody>
+	        </table>	
+	</div>
+	
+</body>

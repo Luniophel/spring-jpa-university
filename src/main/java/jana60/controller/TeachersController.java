@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import jana60.model.Teacher;
 import jana60.repository.TeacherRepository;
 
 @Controller
@@ -22,4 +24,12 @@ public class TeachersController
 		return "teachers";
 	}
 
+	@GetMapping("/{teacherId}")
+	public String teachersDetail(Model model,
+			@PathVariable(name = "teacherId") Integer teachersPrimaryKey)
+	{
+		Teacher curDep = repo.findById(teachersPrimaryKey).get();
+		model.addAttribute("teacher", curDep);
+		return "teachersDetail";
+	}
 }

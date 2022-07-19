@@ -19,8 +19,7 @@
 	              <th>Insegnante</th>
 	              <th>Telefono</th>
 	              <th>E-Mail</th>
-	              <th>Indirizzo Ufficio</th>
-	              <th>Num.</th>
+	              <th>Indirizzo Ufficio - Num.</th>
 	            </tr>
 	          </thead>
 	          <tbody>
@@ -30,9 +29,7 @@
 	              </td>
 	              <td class="bg-secondary text-light text-center" th:text="${tl.phone}"></td>
 	              <td th:text="${tl.email}"></td>
-	              <td class="text-center" th:text="${tl.officeAddress}"></td>
-	              <td class="text-center" th:text="${tl.officeNumber}"></td>
-
+	              <td class="text-center" th:text="${tl.officeAddress} + ' - Stanza ' + ${tl.officeNumber}"></td>
 	            </tr>
 	          </tbody>
 	        </table>
