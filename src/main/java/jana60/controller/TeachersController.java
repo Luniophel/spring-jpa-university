@@ -1,11 +1,15 @@
 package jana60.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.server.ResponseStatusException;
 
 import jana60.model.Teacher;
 import jana60.repository.TeacherRepository;
@@ -28,8 +32,17 @@ public class TeachersController
 	public String teachersDetail(Model model,
 			@PathVariable(name = "teacherId") Integer teachersPrimaryKey)
 	{
-		Teacher curDep = repo.findById(teachersPrimaryKey).get();
-		model.addAttribute("teacher", curDep);
-		return "teachersDetail";
+		Optional<Teacher> queryResult = repo.findById(teachersPrimaryKey);
+		if (queryResult.isPresent())
+		{
+			Teacher curDep = repo.findById(teachersPrimaryKey).get();
+			model.addAttribute("teacher", curDep);
+			return "teachersDetail";
+
+		}
+		else
+		{
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Country not found");
+		}
 	}
 }
