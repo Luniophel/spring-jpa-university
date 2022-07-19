@@ -1,26 +1,25 @@
 package jana60.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jana60.repository.DegreeRepository;
+import jana60.repository.TeacherRepository;
 
 @Controller
-@RequestMapping("/corsi")
-public class DegreesController 
+@RequestMapping("/insegnanti")
+public class TeachersController 
 {
 	@Autowired
-	private DegreeRepository repo;
+	private TeacherRepository repo;
 	
 	@GetMapping
-	public String degrees(Model model) 
+	public String teachersList(Model model)
 	{
-		model.addAttribute("DegreesList" , repo.findAll());		
-		return "degrees";
+		model.addAttribute("TeachersList" , repo.findAll());
+		return "teachers";
 	}
-	
+
 }

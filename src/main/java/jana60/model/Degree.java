@@ -1,14 +1,11 @@
 package jana60.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,8 +15,6 @@ public class Degree
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
-	//private Integer departmentId;
 	
 	private String name;
 	
@@ -96,6 +91,7 @@ public class Degree
 	public void setWebsite(String website) {
 		this.website = website;
 	}
+
 	
 	
 

@@ -5,13 +5,14 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import jana60.model.Degree;
+import jana60.model.Teacher;
 
 @Repository
-public interface DegreeRepository extends CrudRepository <Degree, Integer> 
+public interface TeacherRepository extends CrudRepository <Teacher, Integer> 
 {
 
-	List<Degree> findAllByOrderByName();
+	List<Teacher> findAllByOrderByName();
 
 }
 
+	
