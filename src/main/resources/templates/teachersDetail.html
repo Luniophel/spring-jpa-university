@@ -30,5 +30,30 @@
 	          </tbody>
 	        </table>	
 	</div>
+	<div class="container">
+		<h3 th:text="'Corsi tenuti da ' + ${teacher.getFullName()} + ':'"></h3>
+		 <table class="table my-3">
+	          <thead>
+	            <tr>
+	              <th>Nome</th>
+	              <th>Descrizione</th>
+	              <th class="text-center">Periodo</th>
+	              <th class="text-center">Anno</th>
+	              <th class="text-center">C.F.U.</th>
+	              <th class="text-center">Sito Web</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr class="align-middle" th:each="tc : ${teacher.course}">
+	              <td class="fw-bold bg-success text-light" th:text="${tc.name}"></td>
+	              <td class="bg-secondary text-light" th:text="${tc.description}"></td>
+	              <td class="text-center" th:text="${tc.period}"></td>
+	              <td class="text-center" th:text="${tc.year}"></td>
+	              <td class="fw-bold text-center" th:text="${tc.cfu}"></td>
+	              <td class="text-center" th:text="${tc.website}"></td>
+	            </tr>
+	          </tbody>
+	      </table>
+	</div>
 	
 </body>
