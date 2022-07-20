@@ -42,7 +42,7 @@ public class TeachersController
 		}
 		else
 		{
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Country not found");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Lista insegnanti vuota");
 		}
 	}
 }
