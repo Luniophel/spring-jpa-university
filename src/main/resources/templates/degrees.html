@@ -9,10 +9,10 @@
 <body>
     <th:block th:replace="fragments :: navbar(corsi)"></th:block>
     
-      <div th:if="${#lists.isEmpty(DegreesList)}">
+      <div class="container" th:if="${#lists.isEmpty(DegreesList)}">
 	  	<h1>Lista non disponibile, riprovare più tardi</h1>
 	  </div>
-	  <div th:unless="${#lists.isEmpty(DegreesList)}">
+	  <div class="container col-9" th:unless="${#lists.isEmpty(DegreesList)}">
 	        <table class="table my-3">
 	          <thead>
 	            <tr class="text-center">

@@ -9,27 +9,23 @@
 <body>
 	<th:block th:replace="fragments :: navbar(insegnanti)"></th:block>
 
-	<div class="container">
-		<h1 th:text="${teacher.getFullName()}"></h1>
+	<div class="container col-3 my-5">
+		<h1 class="text-center" th:text="${teacher.getFullName()}"></h1>
+		<img class="w-100" src="/img/profile_ph.jpg">
+		<div  class="bg-dark text-light border">
+			<h6 class="text-center my-3">Telefono</h6>
+			<p class="text-light text-center" th:text="${teacher.phone}"></p>
+		</div>
+		<div  class="bg-light border">
+			<h6 class="text-center my-3">E-Mail</h6>
+			<p class="text-center" th:text="${teacher.email}"></p>
+		</div>
+		<div  class="bg-light border">
+			<h6 class="text-center my-3">Indirizzo Ufficio - Num.</h6>
+			<p class="text-center" th:text="${teacher.officeAddress} + ' - Stanza ' + ${teacher.officeNumber}"></p>
+		</div>
 	</div>
-	<div class="container">
-			<table class="table my-3">
-	          <thead>
-	            <tr class="text-center">
-	              <th>Telefono</th>
-	              <th>E-Mail</th>
-	              <th>Indirizzo Ufficio - Num.</th>
-	            </tr>
-	          </thead>
-	          <tbody>
-	            <tr class="align-middle">
-	              <td class="bg-secondary text-light text-center" th:text="${teacher.phone}"></td>
-	              <td class="text-center" th:text="${teacher.email}"></td>
-	              <td class="text-center" th:text="${teacher.officeAddress} + ' - Stanza ' + ${teacher.officeNumber}"></td>
-	            </tr>
-	          </tbody>
-	        </table>	
-	</div>
+	
 	<div class="container">
 		<h3 th:text="'Corsi tenuti da ' + ${teacher.getFullName()} + ':'"></h3>
 		 <table class="table my-3">

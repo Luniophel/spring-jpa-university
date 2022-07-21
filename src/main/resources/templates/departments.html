@@ -9,10 +9,10 @@
   <body>
     <th:block th:replace="fragments :: navbar(dipartimenti)"></th:block>
 
-	  <div th:if="${#lists.isEmpty(DepartmentsList)}">
+	  <div class="container" th:if="${#lists.isEmpty(DepartmentsList)}">
 	  	<h1>Lista non disponibile, riprovare più tardi</h1>
 	  </div>
-	  <div th:unless="${#lists.isEmpty(DepartmentsList)}">
+	  <div class="container col-9" th:unless="${#lists.isEmpty(DepartmentsList)}">
 	        <table class="table my-3">
 	          <thead>
 	            <tr>
@@ -37,6 +37,10 @@
 	            </tr>
 	          </tbody>
 	        </table>
-	   </div>
+	  </div>
+	  <div class="container col-3">
+	  	<img class="w-75" src="/img/placeholder.png">
+	  </div>
+	  
   </body>
 </html>
